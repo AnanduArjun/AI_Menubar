@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://aciesintranet.sharepoint.com/sites/IntranetDemo/SitePages/Home.aspx",
+      "customActions": {
+        "8d42cf92-a457-40cc-982b-aa29b6744cc5": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "aiMenubar": {
+      "pageUrl": "https://aciesintranet.sharepoint.com/sites/IntranetDemo/SitePages/Home.aspx",
+      "customActions": {
+        "8d42cf92-a457-40cc-982b-aa29b6744cc5": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,384 @@
+/* ==========================================================
+   AI_Menubar — Responsive Navigation Styles (SPFx CSS Module)
+   ========================================================== */
+
+.aiMenubar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 12px 24px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+/* -------------------- Logo -------------------- */
+.logoWrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* -------------------- Search -------------------- */
+.searchWrap {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 18px;
+  background: #eef4f7;
+  border-radius: 999px;
+  box-sizing: border-box;
+}
+
+.searchIcon {
+  flex-shrink: 0;
+  color: #4a5568;
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #2d3748;
+
+  &::placeholder {
+    color: #718096;
+  }
+}
+
+/* -------------------- Profile -------------------- */
+.profileWrap {
+  flex-shrink: 0;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #1a2b52;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* -------------------- Hamburger -------------------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #2d3748;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  &.isActive {
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+/* -------------------- Desktop nav-links row -------------------- */
+.navRow {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 10px 24px 16px;
+  background: #ffffff;
+  box-sizing: border-box;
+  justify-content: center; 
+}
+
+.navLink {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2d3748;
+  text-decoration: none;
+  padding-bottom: 4px;
+
+  &:hover {
+    color: #1a2b52;
+  }
+}
+
+.navLinkActive {
+  font-weight: 700;
+  color: #1a2b52;
+  border-bottom: 2px solid #1a2b52;
+}
+
+/* -------------------- Mobile dropdown panel -------------------- */
+/* Closed state has NO vertical padding/border, otherwise a white strip
+   stays visible under the header even when max-height is 0. */
+.mobilePanel {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 24px;
+  background: #ffffff;
+  border-top: 1px solid transparent;
+  box-sizing: border-box;
+
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.3s ease, visibility 0.3s;
+
+  &.isOpen {
+    max-height: 500px;
+    padding-top: 16px;
+    padding-bottom: 20px;
+    border-top-color: #edf2f7;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.mobileSearch {
+  .search {
+    width: 100%;
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid #edf2f7;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.mobileNavLink {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2d3748;
+  text-decoration: none;
+}
+
+.mobileNavLinkActive {
+  font-weight: 700;
+  color: #1a2b52;
+}
+
+.mobileProfile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobileProfileLabel {
+  font-size: 15px;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+/* ==========================================================
+   Breakpoint: Tablet and below
+   ========================================================== */
+@media (max-width: 768px) {
+  .searchWrap,
+  .profileWrap,
+  .navRow {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .mobilePanel {
+    display: flex;
+  }
+}
+
+/* ==========================================================
+   Breakpoint: Small mobile
+   ========================================================== */
+@media (max-width: 480px) {
+  .aiMenubar {
+    padding: 10px 16px;
+    gap: 12px;
+  }
+
+  .logo {
+    height: 32px;
+  }
+
+  .mobilePanel {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    &.isOpen {
+      padding-top: 14px;
+      padding-bottom: 18px;
+    }
+  }
+}
+
+// ---------- Dropdown menus ----------
+.navRow {
+  position: relative;
+  z-index: 999;
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navToggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.chevron {
+  display: inline-flex;
+  transition: transform 0.2s ease;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+}
+
+.navItem:hover .dropdown,
+.navItemOpen .dropdown {
+  display: block;
+}
+
+.navItem:hover .chevron,
+.navItemOpen .chevron {
+  transform: rotate(180deg);
+}
+
+.dropdownLink {
+  display: block;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #242424;
+  text-decoration: none;
+  border-radius: 6px;
+  white-space: nowrap;
+
+  &:hover {
+    background: #f0f4f8;
+    color: #0f6cbd;
+    text-decoration: none;
+  }
+}
+
+.dropdownLinkActive {
+  font-weight: 600;
+  color: #0c3b5e;
+}
+
+// ---------- Mobile dropdown groups ----------
+.mobileGroup {
+  display: block;
+}
+
+.mobileGroupToggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+
+.mobileSubmenu {
+  display: none;
+  padding-left: 16px;
+}
+
+.mobileGroupOpen .mobileSubmenu {
+  display: block;
+}
+
+.mobileGroupOpen .chevron {
+  transform: rotate(180deg);
+}
+
+.mobileSubLink {
+  display: block;
+  padding: 10px 8px;
+  font-size: 14px;
+  color: #424242;
+  text-decoration: none;
+  border-radius: 4px;
+
+  &:hover {
+    background: #f5f5f5;
+    color: #0f6cbd;
+  }
+}

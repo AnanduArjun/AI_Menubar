@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "ai-menubar-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/aiMenubar/AiMenubarApplicationCustomizer.js",
+          "manifest": "./src/extensions/aiMenubar/AiMenubarApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AiMenubarApplicationCustomizerStrings": "lib/extensions/aiMenubar/loc/{locale}.js"
+  }
+}
