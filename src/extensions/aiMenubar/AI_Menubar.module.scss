@@ -7,7 +7,7 @@
   align-items: center;
   gap: 24px;
   width: 100%;
-  padding: 12px 24px;
+  padding: 12px 40px;
   background: #ffffff;
   box-sizing: border-box;
 }
@@ -129,7 +129,7 @@
   display: flex;
   align-items: center;
   gap: 40px;
-  padding: 10px 24px 16px;
+  padding: 10px 40px 16px;
   background: #ffffff;
   box-sizing: border-box;
   justify-content: center; 
@@ -160,7 +160,7 @@
   display: none;
   flex-direction: column;
   gap: 16px;
-  padding: 0 24px;
+  padding: 0 40px;
   background: #ffffff;
   border-top: 1px solid transparent;
   box-sizing: border-box;
@@ -224,6 +224,12 @@
    Breakpoint: Tablet and below
    ========================================================== */
 @media (max-width: 768px) {
+  .aiMenubar,
+  .mobilePanel {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
   .searchWrap,
   .profileWrap,
   .navRow {

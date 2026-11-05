@@ -1,25 +1,45 @@
-#workbenchPageContent{
-    max-width: 1920px!important;
-    width: 100%!important;
-    left:0px!important;
+#sp-appBar{
+    display: none !important;
+}
+#SuiteNavWrapper{
+    display: none !important;
+}
+.ms-HubNav{
+    display: none !important;
+}
+#spSiteHeader{
+    display: none !important;
+}
+.CanvasZoneSectionContainer{
+    max-width: 1920px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+ 
+}
+ 
+[class^="webpartContent-"] {
+  flex: auto!important;
+}
+ .sp-pageLayout-horizontalNav{
+  border-radius: 0px !important;
+  margin: 0px !important;
+ }
+@media screen and (max-width: 992px) {
+ 
+    [class^="webpartContent-"] {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
     }
-    .l_e_8474018e {
-      padding-left: 0!important;
-      padding-right: 0!important;
-    }
-    .CanvasComponent.LCS .CanvasSection-col{
-      padding-left: 0!important;
-      padding-right: 0!important;
-    }
-    .CanvasComponent.LCS .CanvasZone{
-      max-width: 1920px!important;
-    width: 100%!important;
-    padding: 0!important;
-    }
-    .c_6RhDL_hHQBj{
-        padding: 0!important;
-    }
-    .CanvasComponent.LCS .CanvasZone:not(.CanvasZone--fullWidth) .ControlZone{
-     padding: 0!important;  
    
-    }
+}
+
+@media screen and (max-width: 768px) {
+.r_NLtZH_y298L:not(.f_bHim3_y298L):not(.i_ssID-_y298L){
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+}
+
+#CommentsWrapper{
+    display: none !important;
+}

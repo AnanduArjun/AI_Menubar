@@ -11,7 +11,7 @@ $mobile-bp: 768px;
   display: block !important;      // stop other extensions hiding the footer
   visibility: visible !important;
   width: 100%;
-  padding: 16px 50px 16px;
+  padding: 16px 0 0;
   box-sizing: border-box;
   font-family: $font;
 }
@@ -24,9 +24,8 @@ $mobile-bp: 768px;
   gap: 24px;
   max-width: 100%;
   min-height: 52px;
-  padding: 8px 32px;
+  padding: 8px 40px;              // same side padding as the navbar so they line up
   background: $panel-bg;
-  border-radius: 14px;
   box-sizing: border-box;
 }
 
@@ -87,14 +86,20 @@ $mobile-bp: 768px;
 
 @media (max-width: $mobile-bp) {
   .footerOuter {
-    padding: 12px 16px;
+    padding: 12px 0 0;
   }
 
   .aiFooter {
-    padding: 8px 18px;
+    padding: 8px 24px;
   }
 
   .logo {
     height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aiFooter {
+    padding: 8px 16px;
   }
 }
